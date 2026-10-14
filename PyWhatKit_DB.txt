@@ -1,0 +1,95 @@
+Date: 13/10/2026
+Time: 15:33
+Phone Number: +919361634055
+Message: Alert: Your child farjuk arrived at college safely at 15:32:59.
+--------------------
+Date: 13/10/2026
+Time: 15:54
+Phone Number: +919361634055
+Message: Alert: Your child farjuk arrived at college safely at 15:54:15.
+--------------------
+Date: 13/10/2026
+Time: 15:56
+Phone Number: +919361634055
+Message: Alert: Your child farjuk arrived at college safely at 15:56:09.
+--------------------
+Date: 13/10/2026
+Time: 16:0
+Phone Number: +919361634055
+Message: Alert: Your child farjuk arrived at college safely at 16:00:17.
+--------------------
+Date: 13/10/2026
+Time: 16:23
+Phone Number: +919361634055
+Message: Alert: Your child farjuk arrived at college safely and attendance is marked as Present at 16:22:55 [AN (Afternoon)].
+--------------------
+Date: 13/10/2026
+Time: 16:30
+Phone Number: +919361634055
+Message: Alert: Your child farjuk arrived at college safely and attendance is marked as Present at 16:30:11 [AN (Afternoon)].
+--------------------
+Date: 13/10/2026
+Time: 16:36
+Phone Number: +919361634055
+Message: Alert: Your child farjuk arrived at college safely and attendance is marked as Present at 16:36:03 [AN (Afternoon)].
+--------------------
+Date: 13/10/2026
+Time: 16:38
+Phone Number: +919361634055
+Message: Alert: Your child farjuk arrived at college safely and attendance is marked as Present at 16:38:24 [AN (Afternoon)].
+--------------------
+Date: 13/10/2026
+Time: 16:53
+Phone Number: +919361634055
+Message: Alert: Your child farjuk arrived at college safely and attendance is marked as Present at 16:53:36 [AN (Afternoon)].
+--------------------
+Date: 13/10/2026
+Time: 16:54
+Phone Number: +919361634055
+Message: Alert: Your child abc is marked as ABSENT for today (2026-10-13). Please verify.
+--------------------
+Date: 14/10/2026
+Time: 15:7
+Group ID: BsI0z8g4Lks2J4BUj9TXs1
+Message: 🟢 Attendance Alert:Student: farjuk (201)Status: PRESENTTime: 15:07:30 [AN (Afternoon)]Arrived safely at college.
+--------------------
+Date: 14/10/2026
+Time: 15:9
+Group ID: BsI0z8g4Lks2J4BUj9TXs1
+Message: 🔴 Attendance Alert:Student: Farjuk (CSE001)Status: ABSENTDate: 2026-10-14Please verify with the college.
+--------------------
+Date: 14/10/2026
+Time: 15:9
+Group ID: BsI0z8g4Lks2J4BUj9TXs1
+Message: 🔴 Attendance Alert:Student: ABC (CSE002)Status: ABSENTDate: 2026-10-14Please verify with the college.
+--------------------
+Date: 14/10/2026
+Time: 15:13
+Group ID: BsI0z8g4Lks2J4BUj9TXs1
+Message: 🔴 Attendance Alert:Student: Farjuk (CSE001)Status: ABSENTDate: 2026-10-14Please verify with the college.
+--------------------
+Date: 14/10/2026
+Time: 15:14
+Group ID: BsI0z8g4Lks2J4BUj9TXs1
+Message: 🔴 Attendance Alert:Student: ABC (CSE002)Status: ABSENTDate: 2026-10-14Please verify with the college.
+--------------------
+Date: 14/10/2026
+Time: 15:29
+Group ID: BsI0z8g4Lks2J4BUj9TXs1
+Message: 🟢 Attendance Alert:Student: farjuk (201)Status: PRESENTTime: 15:29:17 [AN (Afternoon)]Arrived safely at college.
+--------------------
+Date: 14/10/2026
+Time: 15:41
+Group ID: BsI0z8g4Lks2J4BUj9TXs1
+Message: 🟢 Attendance Alert:Student: farjuk (201)Status: PRESENTTime: 15:41:29 [AN (Afternoon)]Arrived safely at college.
+--------------------
+Date: 14/10/2026
+Time: 15:53
+Group ID: BsI0z8g4Lks2J4BUj9TXs1
+Message: 🟢 Attendance Alert:Student: qwerty (123)Status: PRESENTTime: 15:53:38 [AN (Afternoon)]Arrived safely at college.
+--------------------
+Date: 14/10/2026
+Time: 15:54
+Group ID: BsI0z8g4Lks2J4BUj9TXs1
+Message: 🟢 Attendance Alert:Student: safi (cse002)Status: PRESENTTime: 15:54:31 [AN (Afternoon)]Arrived safely at college.
+--------------------
