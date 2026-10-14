@@ -3,4 +3,4 @@ opencv-python-headless
 psycopg2-binary
 pandas
 numpy
-face-recognition-models
+face-recognition
