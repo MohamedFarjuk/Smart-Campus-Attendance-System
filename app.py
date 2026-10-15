@@ -228,47 +228,69 @@ elif menu == "Live Attendance Dashboard":
             cap.release()
             cv2.destroyAllWindows()
 
-# --- 4. ATTENDANCE REPORTS & ABSENT ALERTS (WITH SQL JOIN & TABS) ---
+# --- 4. CLOUD DASHBOARD & ANALYTICS ADMIN PANEL ---
 elif menu == "Attendance Reports & Analytics":
-    st.title("📊 Attendance Reports, Analytics & Absent Alerts")
+    st.title("📊 Cloud Dashboard & Analytics Admin Panel")
+    st.write("Real-time campus attendance overview, statistics, charts, and admin reports.")
     
-    tab1, tab2 = st.tabs(["🟢 Present Students Report", "🔴 Absent Students Report"])
+    conn = sqlite3.connect("database.db")
     current_date = datetime.now().strftime("%Y-%m-%d")
     
-    # --- TAB 1: PRESENT REPORT ---
+    # 1. KPI Metrics Cards Calculation
+    total_students_df = pd.read_sql_query("SELECT COUNT(*) as total FROM students", conn)
+    total_students = total_students_df['total'][0] if not total_students_df.empty else 0
+    
+    present_df = pd.read_sql_query("SELECT COUNT(DISTINCT roll_no) as present FROM attendance WHERE date = ?", conn, params=(current_date,))
+    present_count = present_df['present'][0] if not present_df.empty else 0
+    absent_count = max(0, total_students - present_count)
+    
+    # Display Metrics Cards
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Total Students", total_students, delta="Registered")
+    col2.metric("Present Today", present_count, delta=f"{(present_count/total_students*100) if total_students > 0 else 0:.1f}%")
+    col3.metric("Absent Today", absent_count, delta="-Needs Alert", delta_color="inverse")
+    
+    st.markdown("---")
+    
+    # 2. Tabs for Analytics Charts, Present Records & Absent Records
+    tab1, tab2, tab3 = st.tabs(["📈 Analytics Charts", "🟢 Present Students Report", "🔴 Absent Students Report"])
+    
     with tab1:
-        st.subheader("Students Marked Present")
-        conn = sqlite3.connect("database.db")
-        df = pd.read_sql_query("SELECT * FROM attendance", conn)
-        conn.close()
-        
-        if not df.empty:
-            st.dataframe(df, use_container_width=True)
+        st.subheader("Attendance Trends Over Time")
+        trend_df = pd.read_sql_query("SELECT date, COUNT(*) as count FROM attendance GROUP BY date", conn)
+        if not trend_df.empty:
+            st.bar_chart(trend_df.set_index('date'))
+        else:
+            st.info("Not enough attendance history data available for charts yet.")
             
-            csv = df.to_csv(index=False).encode('utf-8')
+    with tab2:
+        st.subheader("Students Marked Present")
+        df_present = pd.read_sql_query("SELECT * FROM attendance", conn)
+        
+        if not df_present.empty:
+            st.dataframe(df_present, use_container_width=True)
+            
+            csv = df_present.to_csv(index=False).encode('utf-8')
             st.download_button(
                 label="Download Present Attendance CSV",
                 data=csv,
                 file_name=f"present_attendance_{current_date}.csv",
-                mime='text/css',
+                mime='text/csv',
             )
         else:
             st.info("No present attendance records found yet.")
 
-    # --- TAB 2: ABSENT REPORT (USING SQL JOIN) ---
-    with tab2:
+    with tab3:
         st.subheader(f"Students Marked Absent (Date: {current_date})")
         
-        conn = sqlite3.connect("database.db")
-        query = """
+        query_absent = """
             SELECT roll_no, name, parent_phone 
             FROM students 
             WHERE roll_no NOT IN (
                 SELECT roll_no FROM attendance WHERE date = ?
             )
         """
-        absent_df = pd.read_sql_query(query, conn, params=(current_date,))
-        conn.close()
+        absent_df = pd.read_sql_query(query_absent, conn, params=(current_date,))
         
         if not absent_df.empty:
             st.dataframe(absent_df, use_container_width=True)
@@ -285,10 +307,12 @@ elif menu == "Attendance Reports & Analytics":
                 label="Download Absent Report CSV",
                 data=absent_csv,
                 file_name=f"absent_students_{current_date}.csv",
-                mime='text/css',
+                mime='text/csv',
             )
         else:
             st.success("🎉 Excellent! All registered students are present today. No absent students found.")
+            
+    conn.close()
 
 # --- 5. NOTIFICATION LOGS ---
 elif menu == "Notification Logs":
