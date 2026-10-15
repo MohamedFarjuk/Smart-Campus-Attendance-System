@@ -1,7 +1,7 @@
 cmake
+build-essential
 libopenblas-dev
 liblapack-dev
-<<<<<<< HEAD
 libx11-dev
-=======
->>>>>>> 7d8051dff93bbf2fe750a7ae835eaecc3514c46b
+libgl1-mesa-glx
+libglib2.0-0

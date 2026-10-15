@@ -1,5 +1,6 @@
 streamlit
 opencv-python-headless
-psycopg2-binary
+face-recognition
 pandas
 numpy
+psycopg2-binary
