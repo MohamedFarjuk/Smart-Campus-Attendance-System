@@ -1,9 +1,5 @@
 streamlit
-opencv-python-headless
-dlib-bin
+opencv-python
 face-recognition
-face_recognition_models
-setuptools
 pandas
 numpy
-psycopg2-binary
